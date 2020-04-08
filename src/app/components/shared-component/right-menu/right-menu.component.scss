@@ -1,0 +1,43 @@
+.rightSidePanel{
+    display: flex;
+    .menuList{
+        height: calc(100vh - 90px);
+        background-color: #ddd;
+        ul {
+            padding: 0;
+            li{
+                list-style-type: none;
+                padding: 10px;
+                margin-bottom: 2px;
+                background-color: #000;
+                a{
+                    color: #fff;
+                    i{
+                        font-size: 22px;
+                    }
+                }
+                &.active{
+                    border-left: 2px solid green;
+                    a{
+                        color: green;
+                    }
+                }
+            }
+            
+        }
+    }
+    .settingCont , .infoCont{
+        width: 190px;
+        height: calc(100vh - 90px);
+        background-color: #ddd;
+        h4{
+            padding: 10px;
+        }
+        .details{
+            background-color: #fff;
+            padding: 10px;
+            height: calc(100vh - 145px);
+            overflow-y:auto;
+        }
+    }
+}

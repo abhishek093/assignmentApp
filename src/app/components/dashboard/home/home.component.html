@@ -1,5 +1,41 @@
+<h5>Dashboard</h5>
 <div class="tiles">
     <div class="tile" *ngFor = "let item of dashboardCont">
-        {{item.title}}
+        <div class="title">
+            <p>{{item.title}}</p>
+        </div>
+        <div class="body">
+            <ng-container *ngIf= "item.listItems.length > 0">
+                <div class="listItems">
+                    <div class="list" *ngFor = "let child of item.listItems">
+                        <ng-container *ngIf = "child.type == 'circle'">
+                            <div class="circleCont">
+                                <div class="icon" [ngStyle]="{'background-color':child.iconColor}">
+                                    <i class="fa fa-{{child.iconClass}}" aria-hidden="true"></i>
+                                </div>
+                                <div class="details">
+                                    <h4 [ngStyle]="{'color':child.colorCode}">{{child.heading}}</h4>
+                                    <p>{{child.details}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf = "child.type == 'rectangle'">
+                            <div class="rectangleCont" [ngStyle]="{'border-color': child.colorCode}">
+                                <div class="icon" [ngStyle]="{'background-color':child.iconColor}">
+                                    <i class="fa fa-{{child.iconClass}}" aria-hidden="true"></i>
+                                </div>
+                                <div class="details">
+                                    <h4 [ngStyle]="{'color':child.colorCode}">{{child.heading}}</h4>
+                                    <p>{{child.details}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="footer">
+            <p>{{item.countLable}}: {{item.count}}</p>
+        </div>
     </div>
 </div>

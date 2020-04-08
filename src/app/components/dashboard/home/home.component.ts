@@ -21,14 +21,16 @@ export class HomeComponent implements OnInit {
             "iconClass": "check",
             "heading": "5",
             "details": "Ready",
-            "colorCode": "#0f0"
+            "colorCode": "#54a054",
+            "iconColor" : "#54a054"
           },
           {
             "type": "circle",
-            "iconClass": "locked",
+            "iconClass": "lock",
             "heading": "5",
             "details": "Locked",
-            "colorCode": "#f00"
+            "colorCode": "#f00",
+            "iconColor" : "#f00"
           }
         ]
       },
@@ -42,14 +44,16 @@ export class HomeComponent implements OnInit {
             "iconClass": "check",
             "heading": "8",
             "details": "Enabled",
-            "colorCode": "#0f0"
+            "colorCode": "#000",
+            "iconColor" : "#3596da"
           },
           {
             "type": "circle",
-            "iconClass": "banned",
+            "iconClass": "ban",
             "heading": "10",
             "details": "Disabled",
-            "colorCode": "#f00"
+            "colorCode": "#000",
+            "iconColor" : "#827f7f"
           }
         ]
       },
@@ -60,17 +64,19 @@ export class HomeComponent implements OnInit {
         "listItems": [
           {
             "type": "rectangle",
-            "iconClass": "check",
+            "iconClass": "exclamation",
             "heading": "3",
             "details": "Critical",
-            "colorCode": "#0f0"
+            "colorCode": "#f00",
+            "iconColor" : "#f00"
           },
           {
             "type": "rectangle",
-            "iconClass": "check",
+            "iconClass": "line-chart",
             "heading": "1",
             "details": "Major",
-            "colorCode": "#f00"
+            "colorCode": "#de630ce8",
+            "iconColor" : "#de630ce8"
           }
         ]
       },
@@ -81,10 +87,11 @@ export class HomeComponent implements OnInit {
         "listItems": [
           {
             "type": "circle",
-            "iconClass": "check",
+            "iconClass": "envelope",
             "heading": "5",
             "details": "Files",
-            "colorCode": "#0f0"
+            "colorCode": "#de630ce8",
+            "iconColor" : "#de630ce8"
           }
         ]
       }

@@ -1,10 +1,111 @@
+h5{
+    font-size: 18px;
+    padding: 10px 10px 0;
+}
 .tiles{
     
     .tile{
         background: #fff;
         margin: 10px;
-        padding: 50px;
-        width: 300px;
+        height: 180px;
+        width: 380px;
         display: inline-block;
+        position: relative;
+        box-shadow: 1px 2px 2px 2px #c7c7c7;
+        .title{
+            padding: 5px 10px;
+            p{
+                font-size: 16px;
+            }
+        }
+        .body{
+            .listItems{
+                display: block;
+                .list{
+                    display: inline-block;
+                    .circleCont{
+                        display: block;
+                        .icon{
+                            display: inline-block;
+                            width: 50px;
+                            height: 50px;
+                            // background: green;
+                            border-radius: 50%;
+                            vertical-align: text-bottom;
+                            position: relative;
+                            margin-left: 5px;
+                            i.fa{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 30px;
+                                color: rgba(255,255,255, 0.7);
+                            }
+                        }
+                        .details{
+                            display: inline-block;
+                            padding: 0 15px;
+                            h4{
+                                margin-bottom: 0;
+                            }
+                            p{
+                                font-size: 14px;
+                                margin-bottom: 0;
+                                color: #484747;
+                            }
+                        }
+                    }
+                    .rectangleCont{
+                        display: block;
+                        background-color: #f2f3f5;
+                        margin: 0 5px;
+                        padding: 0 5px;
+                        border-top: 3px solid;
+                        .icon{
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            vertical-align: super;
+                            position: relative;
+                            margin-left: 5px;
+                            i.fa{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 20px;
+                                color: rgba(255,255,255, 0.7);
+                            }
+                        }
+                        .details{
+                            display: inline-block;
+                            padding: 0 15px;
+                            h4{
+                                margin-bottom: 0;
+                            }
+                            p{
+                                font-size: 14px;
+                                margin-bottom: 0;
+                                color: #484747;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #d8d8d8;
+            p{
+                margin-bottom: 0;
+                padding: 5px 10px;
+                font-size: 14px;
+                color: #6b6969;
+            }
+        }
     }
 }
