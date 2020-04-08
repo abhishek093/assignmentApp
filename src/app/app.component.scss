@@ -1,0 +1,21 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    background-color: #e6e6e6;
+    .leftPanel{
+        width: 280px;
+    }
+    .middlePanel{
+        flex-grow: 8;
+        &.sm{
+            margin-left: 0;
+        }
+        &.lg{
+            margin-left: -95px;
+        }
+    }
+    .rightPanel{
+        // min-width: 300px;
+        background-color: #fff;
+    }
+}

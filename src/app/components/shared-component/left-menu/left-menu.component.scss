@@ -1,0 +1,89 @@
+.leftSidePanel{
+    display: inline-block;
+    height: calc(100vh - 90px);
+    background-color: #e9eef3;
+    &.lg{
+        width: 210px;
+    }
+    &.sm{
+        width: 95px;
+    }
+    ul{
+        padding: 0;
+        li{
+            list-style-type: none;
+            width: 100%;
+            padding: 10px 0 5px;
+            &.child{
+                a{
+                    &:hover{
+                        cursor: initial;
+                    }
+                }
+            }
+            &.active{
+                background-color: #ddd;
+                a{
+                    color: #3596da;
+                    i.fa{
+                        color: #3596da;
+                    }
+                }
+            }
+            a{
+                &:hover{
+                    cursor: pointer;
+                }
+                i.fa{
+                    font-size: 22px;
+                    padding-right: 10px;
+                    max-width: 26px;
+                    margin: 0 10px;
+                    &.show{
+                        display: inline-block;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                        float: right;
+                    }
+                    &.hide{
+                        display: none;
+                        float: right;
+                    }
+                }
+                span{
+                    padding: 0 10px;
+                    font-size: 12px;
+                    margin-right: 25px;
+                    vertical-align: text-top;
+                    &.special{
+                        padding-bottom: 10px;
+                        display: inline-block;
+                        vertical-align: -webkit-baseline-middle;
+                    }
+                }
+                ul{
+                    padding: 0;
+                    background-color: #fff;
+                    li{
+                        list-style-type: none;
+                        padding: 10px 0 5px;
+                        a{
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                        &.active{
+                            a{
+                                color:#3596da;
+                                i.fa{
+                                    color: #3596da;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

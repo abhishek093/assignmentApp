@@ -1,0 +1,62 @@
+<div class="leftSidePanel" [ngClass] = "isExpand ? 'lg' : 'sm'" >
+    <!-- <ul *ngIf="menuItems.length > 0">
+        <li *ngFor = "let item of menuItems">
+            <a href="javascript:void(0)" (click)="menuClick(item.routeName, null, $event)">
+                <i class="fa fa-{{item.iconName}}"></i>
+                <span>{{item.name}}</span>
+                <ul *ngIf= "item.children.length > 0">
+                    <li *ngFor = "let child of item.children">
+                        <a href="javascript:void(0)" (click)="menuClick(item.routeName, child.routeName , $event)">
+                            <i class="fa fa-{{child.iconName}}"></i>
+                            <span>{{child.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </a>
+        </li>
+    </ul> -->
+    <ul>
+        <li [ngClass] = "dashActive ? 'active' : ''">
+            <a (click)= "gotoDashboard()">
+                <i class="fa fa-tachometer"></i>
+                <span *ngIf="isExpand">Dashboard</span>
+            </a>
+        </li>
+        <li class="child">
+            <a>
+                <i class="fa fa-wrench"></i>
+                <span *ngIf="isExpand" class="special">Manage</span>
+                <i class="fa fa-chevron-up" (click)="manangeCollapse()" [ngClass] ="manageExpand ?'show' : 'hide'"></i>
+                <i class="fa fa-chevron-down" (click)= "manangeExpand()" [ngClass] ="!manageExpand ?'show' : 'hide'"></i>
+                <ul *ngIf= "manageExpand">
+                    <li [ngClass] = "printerActive ? 'active' : ''">
+                        <a (click)= "gotoPrinter()">
+                            <i class="fa fa-laptop"></i>
+                            <span *ngIf="isExpand">Printer</span>
+                        </a>
+                    </li>
+                    <li [ngClass] = "filesActive ? 'active' : ''">
+                        <a (click)= "gotoFiles()">
+                            <i class="fa fa-envelope-open"></i>
+                            <span *ngIf="isExpand">Files</span>
+                        </a>
+                    </li>
+                    <li [ngClass] = "jobsActive ? 'active' : ''">
+                        <a (click)= "gotoEmailJobs()">
+                            <i class="fa fa-envelope"></i>
+                            <span *ngIf="isExpand">Email Jobs</span>
+                        </a>
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <li [ngClass] = "alertActive ? 'active' : ''">
+            <a (click)= "gotoAlerts()">
+                <i class="fa fa-exclamation-triangle"></i>
+                <span *ngIf="isExpand">Alerts</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- <button (click)="demo(isExpand)"></button> -->
