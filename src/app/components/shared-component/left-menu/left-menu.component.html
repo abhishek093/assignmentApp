@@ -1,5 +1,5 @@
 <div class="leftSidePanel">
-    <ul *ngIf="menuItems.length > 0">
+    <!-- <ul *ngIf="menuItems.length > 0">
         <li *ngFor = "let item of menuItems">
             <a href="javascript:void(0)" (click)="menuClick(item.routeName, null, $event)">
                 <i class="fa fa-{{item.iconName}}"></i>
@@ -14,5 +14,49 @@
                 </ul>
             </a>
         </li>
+    </ul> -->
+    <ul>
+        <li>
+            <a (click)= "gotoDashboard()">
+                <i class="fa fa-tachometer"></i>
+                <span *ngIf="isExpand">Dashboard</span>
+            </a>
+        </li>
+        <li class="child">
+            <a>
+                <i class="fa fa-wrench"></i>
+                <span *ngIf="isExpand" class="special">Manage</span>
+                <i class="fa fa-chevron-up" (click)="manangeCollapse()" [ngClass] ="manageExpand ?'show' : 'hide'"></i>
+                <i class="fa fa-chevron-down" (click)= "manangeExpand()" [ngClass] ="!manageExpand ?'show' : 'hide'"></i>
+                <ul *ngIf= "manageExpand">
+                    <li>
+                        <a (click)= "gotoDashboard()">
+                            <i class="fa fa-laptop"></i>
+                            <span *ngIf="isExpand">Printer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)= "gotoDashboard()">
+                            <i class="fa fa-envelope-open"></i>
+                            <span *ngIf="isExpand">Files</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)= "gotoDashboard()">
+                            <i class="fa fa-envelope"></i>
+                            <span *ngIf="isExpand">Email Jobs</span>
+                        </a>
+                    </li>
+                </ul>
+            </a>
+        </li>
+        <li>
+            <a (click)= "gotoAlerts()">
+                <i class="fa fa-exclamation-triangle"></i>
+                <span *ngIf="isExpand">Alerts</span>
+            </a>
+        </li>
     </ul>
 </div>
+
+<!-- <button (click)="demo(isExpand)"></button> -->

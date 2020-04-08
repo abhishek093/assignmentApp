@@ -1,4 +1,63 @@
 .leftSidePanel{
     display: inline-block;
     height: calc(100vh - 90px);
+    background-color: #e9eef3;
+    ul{
+        padding: 0;
+        li{
+            list-style-type: none;
+            width: 100%;
+            padding: 10px 0 5px;
+            &.child{
+                a{
+                    &:hover{
+                        cursor: initial;
+                    }
+                }
+            }
+            a{
+                &:hover{
+                    cursor: pointer;
+                }
+                i.fa{
+                    font-size: 22px;
+                    padding-right: 10px;
+                    max-width: 26px;
+                    margin: 0 10px;
+                    &.show{
+                        display: inline-block;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    &.hide{
+                        display: none;
+                    }
+                }
+                span{
+                    padding: 0 10px;
+                    font-size: 12px;
+                    margin-right: 25px;
+                    &.special{
+                        padding-bottom: 10px;
+                        display: inline-block;
+                        vertical-align: -webkit-baseline-middle;
+                    }
+                }
+                ul{
+                    padding: 0;
+                    background-color: #fff;
+                    li{
+                        list-style-type: none;
+                        padding: 10px 0 5px;
+                        a{
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

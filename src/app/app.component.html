@@ -1,18 +1,18 @@
 <section class="header">
-  <app-header></app-header>
+  <app-header (expandEvt) = "checkExpand($event)"></app-header>
 </section>
-<section class="mainBody">
+<div class="mainBody flex-container">
   <div class="leftPanel" *ngIf ="loader">
-    <app-left-menu [items]= "leftMenuData"></app-left-menu>
+    <app-left-menu [isExpand$] ="expandFlag"></app-left-menu>
   </div>
-  <div class="middlePanel">
+  <div class="middlePanel" [ngClass]= "expandFlag ?'sm' :'lg'">
     <router-outlet></router-outlet>
   </div>
   <div class="rightPanel">
     <app-right-menu></app-right-menu>
   </div>
   
-</section>
+</div>
 <section class="footer">
   <app-footer></app-footer>
 </section>

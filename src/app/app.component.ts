@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   title = 'assignmentApp';
   leftMenuData = [];
   loader = false; 
+  expandFlag = true;
   ngOnInit(){
     this.leftMenuData = [
       {
@@ -47,5 +48,9 @@ export class AppComponent implements OnInit {
       }
     ]
     this.loader = true;
+  }
+  checkExpand(evt){
+    console.log('evt in app compo:', evt);
+    this.expandFlag = evt;
   }
 }
