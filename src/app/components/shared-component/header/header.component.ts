@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {SharedDataService} from '../../../services/shared-data.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,7 +6,7 @@ import {SharedDataService} from '../../../services/shared-data.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private sharedData : SharedDataService) { }
+  constructor() { }
   expandFlag = true;
   @Output() expandEvt = new EventEmitter<boolean>();
   ngOnInit() {
@@ -19,7 +18,6 @@ export class HeaderComponent implements OnInit {
       this.expandFlag = true;
     }
     this.expandEvt.emit(this.expandFlag);
-    // this.sharedData.setExpandDetails(this.expandFlag);
   }
 
 }

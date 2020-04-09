@@ -1,20 +1,4 @@
 <div class="leftSidePanel" [ngClass] = "isExpand ? 'lg' : 'sm'" >
-    <!-- <ul *ngIf="menuItems.length > 0">
-        <li *ngFor = "let item of menuItems">
-            <a href="javascript:void(0)" (click)="menuClick(item.routeName, null, $event)">
-                <i class="fa fa-{{item.iconName}}"></i>
-                <span>{{item.name}}</span>
-                <ul *ngIf= "item.children.length > 0">
-                    <li *ngFor = "let child of item.children">
-                        <a href="javascript:void(0)" (click)="menuClick(item.routeName, child.routeName , $event)">
-                            <i class="fa fa-{{child.iconName}}"></i>
-                            <span>{{child.name}}</span>
-                        </a>
-                    </li>
-                </ul>
-            </a>
-        </li>
-    </ul> -->
     <ul>
         <li [ngClass] = "dashActive ? 'active' : ''">
             <a (click)= "gotoDashboard()">
@@ -58,5 +42,3 @@
         </li>
     </ul>
 </div>
-
-<!-- <button (click)="demo(isExpand)"></button> -->
