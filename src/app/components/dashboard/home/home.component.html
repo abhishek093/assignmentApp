@@ -1,6 +1,6 @@
 <h5>Dashboard</h5>
-<div class="tiles">
-    <div class="tile" *ngFor = "let item of dashboardCont">
+<div class="tiles" *ngIf="isLoaded">
+    <div class="tile" *ngFor = "let item of dashboardCont.tiles_list">
         <div class="title">
             <p>{{item.title}}</p>
         </div>

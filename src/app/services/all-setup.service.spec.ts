@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SharedDataService } from './shared-data.service';
+import { AllSetupService } from './all-setup.service';
 
-describe('SharedDataService', () => {
+describe('AllSetupService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SharedDataService = TestBed.get(SharedDataService);
+    const service: AllSetupService = TestBed.get(AllSetupService);
     expect(service).toBeTruthy();
   });
 });

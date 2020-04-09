@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AllSetupService} from '../../../services/all-setup.service';
 
 @Component({
   selector: 'app-home',
@@ -6,96 +7,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  dashboardCont = [];
-  constructor() { }
+  dashboardCont : HomeTilesData;
+  isLoaded = false;
+  constructor(private service : AllSetupService) { }
 
   ngOnInit() {
-    this.dashboardCont =  [
-      {
-        "title": "Printer Management",
-        "count": "10",
-        "countLable": "Total Printer",
-        "listItems": [
-          {
-            "type": "circle",
-            "iconClass": "check",
-            "heading": "5",
-            "details": "Ready",
-            "colorCode": "#54a054",
-            "iconColor" : "#54a054"
-          },
-          {
-            "type": "circle",
-            "iconClass": "lock",
-            "heading": "5",
-            "details": "Locked",
-            "colorCode": "#f00",
-            "iconColor" : "#f00"
-          }
-        ]
-      },
-      {
-        "title": "Email Job Management",
-        "count": "18",
-        "countLable": "Total Email Jobs",
-        "listItems": [
-          {
-            "type": "circle",
-            "iconClass": "check",
-            "heading": "8",
-            "details": "Enabled",
-            "colorCode": "#000",
-            "iconColor" : "#3596da"
-          },
-          {
-            "type": "circle",
-            "iconClass": "ban",
-            "heading": "10",
-            "details": "Disabled",
-            "colorCode": "#000",
-            "iconColor" : "#827f7f"
-          }
-        ]
-      },
-      {
-        "title": "Alerts",
-        "count": "5",
-        "countLable": "Total Alerts",
-        "listItems": [
-          {
-            "type": "rectangle",
-            "iconClass": "exclamation",
-            "heading": "3",
-            "details": "Critical",
-            "colorCode": "#f00",
-            "iconColor" : "#f00"
-          },
-          {
-            "type": "rectangle",
-            "iconClass": "line-chart",
-            "heading": "1",
-            "details": "Major",
-            "colorCode": "#de630ce8",
-            "iconColor" : "#de630ce8"
-          }
-        ]
-      },
-      {
-        "title": "File Management",
-        "count": "5",
-        "countLable": "Total Files",
-        "listItems": [
-          {
-            "type": "circle",
-            "iconClass": "envelope",
-            "heading": "5",
-            "details": "Files",
-            "colorCode": "#de630ce8",
-            "iconColor" : "#de630ce8"
-          }
-        ]
-      }
-    ]
+    this.getTilesListData();
   }
 
+  getTilesListData(){
+    this.service.tilesListService().subscribe(data =>{
+      if(data) {
+        this.dashboardCont = data;
+        this.isLoaded = true;
+      }
+    });
+    
+  }
+
+}
+export interface ListItem {
+  type: string;
+  iconClass: string;
+  heading: string;
+  details: string;
+  colorCode: string;
+  iconColor: string;
+}
+
+export interface TilesList {
+  title: string;
+  count: string;
+  countLable: string;
+  listItems: ListItem[];
+}
+
+export interface HomeTilesData {
+  tiles_list: TilesList[];
 }
